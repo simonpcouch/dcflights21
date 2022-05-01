@@ -1,0 +1,13 @@
+Package: dcflights21
+Title: Out-bound flights from DC-serving airports in 2021
+Version: 0.0.0.9000
+Authors@R: 
+    person("Simon", "Couch", , "simonpatrickcouch@gmail.com", role = c("aut", "cre"))
+Description: An R data-only package supplying data on out-bound flights from 
+    airports serving Washington, DC in 2021.
+Depends:
+    R (>= 3.5.0)
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
