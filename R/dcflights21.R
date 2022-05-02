@@ -18,9 +18,7 @@
 #'   \item{plane}{Plane tail number, giving a unique ID for each plane.} 
 #'   \item{air_time}{Scheduled amount of time spent in the air, in minutes.} 
 #'   \item{duration}{Distance between airports, in miles.} 
-#'   \item{temperature}{Temperature, in Fahrenheit.}
 #'   \item{wind_speed}{Wind speed, in miles per hour.}
-#'   \item{precipitation}{Precipitation, in inches.} 
 #'   \item{visibility}{Visibility, in miles.}
 #'   \item{year}{Year the flown plane was manufactured.}
 #' }
