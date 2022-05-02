@@ -18,6 +18,18 @@ You can install the package with the following lines
 pak::pak("simonpcouch/dcflights21")
 ```
 
+# Preview
+
+The package exports one tibble, `dcflights21`, with data on flight departures, weather, airline, airport, and the flown plane. The dataset consists of several different data types with varying degrees of missingness.
+
+```{r}
+library(dcflights21)
+
+data(dcflights21)
+
+str(dcflights21)
+```
+
 # Data Sources
 
 For the most part, the data in this package can be downloaded, processed, packaged, and documented with the following lines:
@@ -32,4 +44,4 @@ dcflights21 <- anyflights(station = c("BWI", "DCA", "IAD"), year = 2021)
 as_flights_package("dcflights21")
 ```
 
-The {anyflights} documentation outlines data sources in detail.
+The {anyflights} documentation outlines data sources in detail. Changes to the output of the above lines are reproduced in `data-raw/tidy.R`.

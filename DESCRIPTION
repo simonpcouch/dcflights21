@@ -7,7 +7,10 @@ Description: An R data-only package supplying data on out-bound flights from
     airports serving Washington, DC in 2021.
 Depends:
     R (>= 3.5.0)
+Suggests:
+    lubridate
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+LazyData: true
