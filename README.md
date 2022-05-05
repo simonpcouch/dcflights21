@@ -58,7 +58,7 @@ library(anyflights)
 
 dcflights21 <- anyflights(station = c("BWI", "DCA", "IAD"), year = 2021)
 
-as_flights_package("dcflights21")
+as_flights_package(dcflights21)
 ```
 
 The {anyflights} documentation outlines data sources in detail. Changes
