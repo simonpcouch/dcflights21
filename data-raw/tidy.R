@@ -57,7 +57,8 @@ top_destinations <-
 dcflights <-
   dcflights %>%
   filter(destination %in% top_destinations) %>%
-  mutate(destination = as.factor(destination)) %>%
-  select(airline, flight, destination, date, hour, visibility, duration, dep_delay)
+  select(airline, flight, destination, date, hour, visibility, duration, dep_delay) %>%
+  na.omit() %>%
+  mutate(destination = as.factor(destination))
 
 usethis::use_data(dcflights, overwrite = TRUE)
