@@ -41,7 +41,6 @@ NULL
 #' airports.
 #'
 #' @name dcflights
-#' @aliases flights
 #' @docType data
 #' @format A data frame with columns:
 #' \describe{ 

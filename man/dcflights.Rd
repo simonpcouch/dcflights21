@@ -3,7 +3,6 @@
 \docType{data}
 \name{dcflights}
 \alias{dcflights}
-\alias{flights}
 \title{Flights data}
 \format{
 A data frame with columns:
