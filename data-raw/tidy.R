@@ -22,17 +22,43 @@ dcflights21 <-
          plane = tailnum,
          destination = dest
          ) %>%
-  select(airline, flight, origin, destination, date, hour, dep_delay, 
-         plane, duration, wind_speed, visibility) %>%
+  select(airline, flight, origin, destination, date, hour, 
+         plane, distance, duration, wind_speed, visibility, dep_delay) %>%
   left_join(
     .,
     select(planes, plane = tailnum, plane_year = year),
     by = "plane"
   ) %>%
   mutate(across(where(is.character), ~ as.factor(.x)),
-         airline = as.character(airline))
+         airline = as.character(airline)) %>%
+  relocate(dep_delay, .after = last_col())
 
 dcflights21
 
 # save results ----------------------------------------------------------
 usethis::use_data(dcflights21, overwrite = TRUE)
+
+# smaller dataset -------------------------------------------------------
+
+dcflights <-
+  dcflights21 %>%
+  mutate(destination = as.character(destination)) %>%
+  filter(origin == "DCA",
+         date >= "2021-07-01", date < "2021-08-01") 
+
+top_destinations <- 
+  dcflights %>%
+  group_by(destination) %>%
+  summarise(dest_total = n()) %>%
+  ungroup() %>%
+  slice_max(dest_total, n = 10) %>%
+  pull(destination)
+
+dcflights <-
+  dcflights %>%
+  filter(destination %in% top_destinations) %>%
+  select(airline, flight, destination, date, hour, visibility, duration, dep_delay) %>%
+  na.omit() %>%
+  mutate(destination = as.factor(destination))
+
+usethis::use_data(dcflights, overwrite = TRUE)
